@@ -1,0 +1,22 @@
+@use '../colors';
+
+.credit-card {
+  display: flex;
+  width: 350px;
+  max-width: 100%;
+  padding: 10px 15px;
+  border-radius: 9px;
+  background-color: colors.$primary;
+  white-space: nowrap;
+
+  .link-with-icon .icon {
+    margin-right: 15px;
+  }
+
+  @media screen and (max-width: 767px) {
+    .h4 {
+      font-size: 15px;
+      line-height: 110%;
+    }
+  }
+}

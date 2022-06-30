@@ -1,0 +1,34 @@
+.list {
+  display: flex;
+  flex-direction: column;
+
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+
+  &__title {
+    margin-bottom: 34px;
+  }
+
+  &__item {
+    display: flex;
+    align-items: center;
+    min-height: 46px;
+
+    &:not(:last-child) {
+      margin-bottom: 26px;
+    }
+  }
+
+  @media screen and (max-width: 767px) {
+    &__title {
+      margin-bottom: 31px;
+    }
+
+    .f {
+      margin-top: 8px;
+      margin-bottom: 32px;
+      text-align: left;
+    }
+  }
+}

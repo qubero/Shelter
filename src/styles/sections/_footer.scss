@@ -1,0 +1,81 @@
+@use '../colors';
+
+.footer {
+  padding-top: 40px;
+  background: url("../images/noise_transparent@2x.png"), radial-gradient(110.67% 538.64% at 5.73% 50%, #513D2F 0%, #1A1A1C 100%), #211F20;
+
+  &__content {
+    display: flex;
+    justify-content: space-between;
+
+    color: colors.$primary;
+
+    span {
+      color: colors.$light-xl;
+    }
+  }
+
+  &__contacts {
+    margin-top: 16px;
+    max-width: 280px;
+  }
+
+  &__locations {
+    padding-left: 10px;
+    margin: 16px 20px 0;
+    max-width: 320px;
+  }
+
+  &__puppy {
+    display: flex;
+    justify-content: center;
+  }
+
+  @media screen and (max-width: 1023px) {
+    padding: 30px 20px 0;
+
+    &__contacts,
+    &__locations {
+      padding: 0;
+      margin: 0 14px 56px;
+    }
+
+    &__locations {
+      max-width: 300px;
+    }
+
+    &__content {
+      flex-wrap: wrap;
+    }
+
+    &__puppy {
+      width: 100%;
+    }
+  }
+
+  @media screen and (max-width: 767px) {
+    padding-left: 0;
+    padding-right: 0;
+
+    &__contacts,
+    &__locations {
+      margin: 0 0 33px;
+    }
+
+    &__contacts {
+      .list__item {
+        justify-content: center;
+      }
+    }
+
+    &__content {
+      justify-content: center;
+      text-align: center;
+      max-width: 320px;
+    }
+
+    &__puppy {
+      max-width: 260px;
+    }
+  }
+}

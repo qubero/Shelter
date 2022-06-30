@@ -1,0 +1,31 @@
+.about {
+  &__text {
+    max-width: 430px;
+  }
+
+  @media screen and (max-width: 767px) {
+    &__text {
+      max-width: 270px;
+      text-align: justify;
+    }
+
+    &__image {
+      max-width: 260px;
+    }
+
+    p {
+      margin-bottom: 20px;
+    }
+  }
+
+  @media screen and (min-width: 1200px) {
+    &__text {
+      margin-top: 14px;
+      margin-bottom: 14px;
+    }
+
+    &__image+&__text {
+      margin-left: 120px;
+    }
+  }
+}

@@ -1,0 +1,66 @@
+@use '../colors';
+
+.pet-card {
+  color: #000000;
+  text-align: center;
+
+  &__name {
+    line-height: 45px;
+    margin-bottom: 10px;
+  }
+
+  &__sub {
+    display: block;
+    margin-bottom: 20px;
+  }
+
+  p {
+    text-align: justify;
+    margin-bottom: 24px;
+    font-size: 13px;
+  }
+
+  &__descr {
+    margin: 0;
+    padding-left: 14px;
+    text-align: left;
+    list-style: none;
+
+    li {
+      margin-bottom: 6px;
+
+      &:before {
+        content: '';
+        float: left;
+        display: list-item;
+        list-style-type: disc;
+        list-style-position: inside;
+        width: 4px;
+        margin-left: -14px;
+        color: colors.$primary;
+      }
+    }
+  }
+
+  @media screen and (min-width: 768px) {
+    text-align: left;
+
+    p {
+      text-align: left;
+    }
+  }
+
+  @media screen and (min-width: 1280px) {
+    &__sub, p {
+      margin-bottom: 40px;
+    }
+
+    p {
+      font-size: 15px;;
+    }
+
+    li {
+      margin-bottom: 11px;
+    }
+  }
+}

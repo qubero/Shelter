@@ -1,0 +1,35 @@
+@use '../colors';
+
+.donation {
+  background-color: colors.$light-l;
+
+  &__text {
+    max-width: 380px;
+
+    &>* {
+      margin-bottom: 20px;
+    }
+  }
+
+  @media screen and (max-width: 767px) {
+    &__text {
+      max-width: 280px;
+    }
+
+    &__image {
+      max-width: 260px;
+    }
+  }
+
+  @media screen and (min-width: 1200px) {
+    &__image+&__text {
+      margin-left: 30px;
+    }
+  }
+
+  @media screen and (min-width: 768px) and (max-width: 1199px) {
+    &__text {
+      margin-bottom: 60px;
+    }
+  }
+}

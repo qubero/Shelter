@@ -1,0 +1,38 @@
+@use 'fonts';
+@use 'global';
+
+
+@use 'components/buttons';
+@use 'components/card';
+@use 'components/credit-card';
+@use 'components/header';
+@use 'components/icons';
+@use 'components/info-card';
+@use 'components/links';
+@use 'components/list';
+@use 'components/logo';
+@use 'components/menu';
+@use 'components/options';
+@use 'components/pet-card';
+@use 'components/pets-list';
+@use 'components/slider';
+@use 'components/toggle';
+@use 'components/popup';
+
+@use 'sections/about';
+@use 'sections/donation';
+@use 'sections/help';
+@use 'sections/hero';
+@use 'sections/pets';
+@use 'sections/footer';
+
+@media screen and (max-width: 1279px) {
+  .hidden {
+      display: none !important;
+  }
+}
+@media screen and (max-width: 767px) {
+  .sm-hidden {
+    display: none !important;
+  }
+}

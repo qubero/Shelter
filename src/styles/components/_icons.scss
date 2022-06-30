@@ -1,0 +1,6 @@
+@use '../colors' as colors;
+
+.icon {
+  fill: colors.$primary;
+  transition: 0.3s;
+}

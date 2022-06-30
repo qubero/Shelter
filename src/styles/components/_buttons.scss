@@ -1,0 +1,59 @@
+@use '../colors';
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 13px 43px;
+  min-height: 52px;
+
+  border: 2px solid colors.$primary;
+  background: colors.$primary;
+  border-radius: 100px;
+
+  color: colors.$dark-3xl;
+  font-family: 'Georgia';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 17px;
+  line-height: 130%;
+
+  cursor: pointer;
+  letter-spacing: 0.06em;
+  transition: all 0.3s;
+
+  &:hover,
+  &.active {
+    border-color: colors.$primary-light;
+    background: colors.$primary-light;
+  }
+
+  &:disabled {
+    pointer-events: none;
+  }
+
+  &--round {
+    width: 52px;
+    padding: 0;
+  }
+
+  &:not(:disabled) {
+    .icon-dis {
+      display: none;
+    }
+  }
+
+  &--outline {
+    background: transparent;
+
+    &:disabled {
+      border-color: colors.$dark-s;
+      color: colors.$dark-s;
+
+      .icon {
+        display: none;
+      }
+    }
+  }
+
+}

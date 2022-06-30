@@ -1,0 +1,112 @@
+@use '../colors';
+
+.menu {
+  &__list {
+    display: flex;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    column-gap: 35px;
+  }
+
+  &__item {
+    position: relative;
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      transform: translate(-50%, -7px);
+      width: 0%;
+      height: 2px;
+      background-color: colors.$primary;
+    }
+
+    a {
+      font-family: 'Arial';
+      font-style: normal;
+      font-weight: 400;
+      font-size: 15px;
+      line-height: 160%;
+      padding: 12px 0;
+
+      color: colors.$dark-s;
+    }
+
+    &.active {
+      @media screen and (min-width: 768px) {
+        pointer-events: none;
+      }
+
+      &::after {
+        width: 100%;
+      }
+    }
+
+    &:hover,
+    &:active,
+    &.active {
+      a {
+        color: colors.$light-s;
+      }
+    }
+  }
+
+  @media screen and (max-width: 767px) {
+    position: fixed;
+    z-index: 9999;
+    top: 0;
+    right: -320px;
+    bottom: 0;
+    width: 320px;
+    max-width: 100%;
+
+    display: grid;
+    align-items: center;
+    padding: 150px 38px 150px;
+
+    margin: 0;
+    background: colors.$dark-3xl;
+    overflow-y: auto;
+    transition: right 0.3s ease-in-out;
+
+    &--open {
+      right: 0;
+    }
+
+    &__list {
+      flex-direction: column;
+      row-gap: 40px;
+    }
+
+    &__item {
+      display: flex;
+      justify-content: center;
+      margin: 0;
+
+      a {
+        font-size: 32px;
+        line-height: 30px;
+      }
+
+      &.active a {
+        border-bottom: 2px colors.$primary solid;
+      }
+
+      &::after {
+        content: none;
+      }
+    }
+  }
+
+  @media screen and (max-width: 767px) and (max-height: 640px) {
+    padding-bottom: 20px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .menu:not(.menu--open) {
+    right: -100%;
+  }
+}

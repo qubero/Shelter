@@ -1,0 +1,23 @@
+@use '../colors';
+
+.help {
+  &__title {
+    max-width: 310px;
+    margin: 0 auto 60px;
+    text-align: center;
+  }
+
+  &__options {
+    margin: 0 auto;
+  }
+
+  @media screen and (max-width: 767px) {
+    &__title {
+      margin-bottom: 42px;
+    }
+
+    &__options {
+      column-gap: 30px;
+    }
+  }
+}

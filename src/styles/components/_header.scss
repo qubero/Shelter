@@ -1,0 +1,125 @@
+@use '../colors';
+
+.header {
+  display: flex;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+  min-height: 180px;
+  margin-bottom: -180px;
+  line-height: 40px;
+
+  &__container {
+    display: flex;
+    align-items: center;
+  }
+
+  &--sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
+
+    &+* {
+      margin-top: 120px;
+    }
+
+    background-color: colors.$light-xl;
+    min-height: 120px;
+    margin-bottom: -120px;
+
+    .menu__item {
+      a {
+        color: colors.$dark-l;
+      }
+
+      &:hover,
+      &:active,
+      &.active {
+        a {
+          color: colors.$dark-3xl;
+        }
+      }
+    }
+
+    .header__logo {
+      color: colors.$dark-3xl;
+
+      &-title {
+        color: colors.$dark-l;
+      }
+    }
+
+    @media screen and (max-width: 767px) {
+      .menu {
+        background: colors.$light-l;
+      }
+    }
+  }
+
+  &__logo {
+    margin-right: auto;
+    color: colors.$light-xl;
+
+    &-title {
+      color: colors.$primary;
+    }
+  }
+
+  &__button {
+    // position: fixed;
+    margin-right: 33px;
+    z-index: 9999;
+    top: 35px;
+    right: 43px;
+    display: none;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    cursor: pointer;
+    font-size: 0;
+
+    &--open {
+      position: fixed;
+      margin-right: 0;
+    }
+  }
+
+  @media screen and (max-width: 1023px) {
+    min-height: 120px;
+    margin-bottom: -120px;
+  }
+
+  @media screen and (max-width: 767px) {
+    &__menu {
+      order: 1;
+      margin-left: 12px;
+    }
+
+    &__button {
+      display: block;
+    }
+
+    &__button--open~.header__overlay {
+      display: block;
+    }
+  }
+}
+
+.header__button~.header__overlay {
+  display: none;
+}
+
+
+.header__logo--extra {
+  display: none;
+}
+
+@media screen and (max-width: 767px) {
+  .menu--open .header__logo--extra {
+    display: block;
+    position: absolute;
+    z-index: 10000;
+    top: 30px;
+    right: 125px;
+  }
+}
